@@ -1,0 +1,4 @@
+# Only the Dockerfile and main.py go to Cloud Build
+*
+!Dockerfile
+!main.py

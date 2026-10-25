@@ -3,3 +3,6 @@
 # puts them in place on the build server and checks each against its SOURCE.
 /prebuilt/apps/Cromite/Cromite.apk
 /prebuilt/apps/Gboard/Gboard.apk
+
+# Python caches from running server/reports tests
+__pycache__/
