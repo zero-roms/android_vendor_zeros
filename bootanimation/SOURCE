@@ -1,12 +1,12 @@
 what:    ZeroS boot animation, design B1 "orbit" (white ring, red dot orbiting
-         clockwise, "ZeroS" wordmark in Roboto weight 500), black background
+         clockwise, "ZeroS" wordmark in Roboto weight 500 with "oS" in red), black background
 canvas:  520x640 at 30 fps, centred by Android on the screen
 parts:   part0 intro 36 frames (1.2 s, played once); part1 one orbit 66 frames
          (2.2 s, looped, faded out over 12 frames when boot completes)
-colours: background #000000, ring and wordmark #f2f2f0, dot #e5322d
+colours: background #000000, ring and "Zer" #f2f2f0, dot and "oS" #e5322d
 font:    Roboto variable (Android system font, Apache 2.0), taken from ZeroS 0.4.0
          /system/fonts/Roboto-Regular.ttf,
          sha256 d5633ff957d2ecb1ce7716e86e11057091c3526042efe16fe1f65dfc06a65551
-zip:     105 entries, all stored, 2,331,096 bytes,
-         sha256 8ced1c1e3357dc3aeb04c26a5d46aab45cf43edb6e5fc27d34c2de285ce8a3bf
-made:    24 October 2026 with make-bootanimation.sh (make-frames.swift)
+zip:     105 entries, all stored, 2,358,970 bytes,
+         sha256 8f5a0dce859dd3ee8f99541a7636e1456a1819b9a501fdac70a15ec0a22cb023
+made:    24 October 2026 with make-bootanimation.sh (make-frames.swift); red "oS" 25 October 2026

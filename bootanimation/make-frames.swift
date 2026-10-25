@@ -1,5 +1,6 @@
 // ZeroS boot animation frames, design B1 "orbit" (chosen 24 October 2026):
-// a white ring, a red dot orbiting it clockwise, and the ZeroS wordmark.
+// a white ring, a red dot orbiting it clockwise, and the ZeroS wordmark with
+// its "oS" in red (option C, chosen 25 October 2026: reads as "Zero OS").
 //
 //   swift make-frames.swift <Roboto variable TTF> <output dir>
 //
@@ -36,6 +37,7 @@ let ringCenterY: CGFloat = 230, ringR: CGFloat = 150, ringWidth: CGFloat = 10
 let dotR: CGFloat = 17
 let wordmark = "ZeroS", wordmarkSize: CGFloat = 68, wordmarkWeight = 500.0
 let wordmarkBaselineY: CGFloat = 520, wordmarkKern: CGFloat = 3
+let redLetters = [3, 4]          // "o" and "S" of ZeroS
 
 let white = CGColor(srgbRed: 0xf2 / 255, green: 0xf2 / 255, blue: 0xf0 / 255, alpha: 1)
 let red = CGColor(srgbRed: 0xe5 / 255, green: 0x32 / 255, blue: 0x2d / 255, alpha: 1)
@@ -73,7 +75,12 @@ func frame(ringAlpha: CGFloat, dotAlpha: CGFloat, angleDeg: Double, textAlpha: C
         NSAttributedString.Key(kCTForegroundColorAttributeName as String): white.copy(alpha: textAlpha)!,
         NSAttributedString.Key(kCTKernAttributeName as String): wordmarkKern,
     ]
-    let line = CTLineCreateWithAttributedString(NSAttributedString(string: wordmark, attributes: attrs))
+    let text = NSMutableAttributedString(string: wordmark, attributes: attrs)
+    for index in redLetters {
+        text.addAttribute(NSAttributedString.Key(kCTForegroundColorAttributeName as String),
+                          value: red.copy(alpha: textAlpha)!, range: NSRange(location: index, length: 1))
+    }
+    let line = CTLineCreateWithAttributedString(text)
     let width = CGFloat(CTLineGetTypographicBounds(line, nil, nil, nil)) - wordmarkKern
     ctx.textPosition = CGPoint(x: (CGFloat(W) - width) / 2, y: CGFloat(H) - wordmarkBaselineY)
     CTLineDraw(line, ctx)
