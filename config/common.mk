@@ -23,15 +23,17 @@ PRODUCT_SYSTEM_PROPERTIES += \
 # Cloud Storage bucket, so the address is supplied only in the build
 # environment (ZEROS_UPDATER_URI) and never committed. Without it the Updater
 # asks LineageOS's server, which offers nothing for an UNOFFICIAL build.
+# lineage.updater.uri is not a ro. property, so Android limits it to 91 bytes
+# (gen_build_prop fails the build otherwise).
 ifneq ($(ZEROS_UPDATER_URI),)
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     lineage.updater.uri=$(ZEROS_UPDATER_URI)
 endif
 
 # Settings > About phone shows ro.zeros.version in its own "ZeroS version" row
-# (ZeroS fork of Settings, from 0.5.0), above LineageOS's version, which again
-# shows the plain LineageOS base. 0.2.0-0.4.0 put "ZeroS-<version>" into
-# LineageOS's version string instead (TARGET_UNOFFICIAL_BUILD_ID).
+# (ZeroS fork of Settings, from 0.5.0); LineageOS's version row is not shown
+# (from 0.5.1). 0.2.0-0.4.0 put "ZeroS-<version>" into LineageOS's version
+# string instead (TARGET_UNOFFICIAL_BUILD_ID).
 
 # Boot animation: design B1 "orbit" in black, white and red (chosen 24 October
 # 2026). LineageOS's bootanimation.zip module copies this file instead of
