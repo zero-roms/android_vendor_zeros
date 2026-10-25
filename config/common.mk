@@ -18,6 +18,11 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.zeros.device=$(ZEROS_BUILD) \
     ro.zeros.display.version=ZeroS-$(ZEROS_SEMVER)
 
+# Settings > About phone > Legal information > ZeroS legal (ZeroS fork of
+# Settings, from 0.5.1) opens ZeroS's terms and privacy policy.
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.zeros.legal.url=https://github.com/zero-roms/android_vendor_zeros/blob/zeros-24.0/LEGAL.md
+
 # Update server for LineageOS's Updater (lineage.updater.uri, HTTPS only; see
 # build/tools/publish-ota.sh). During 3B-3C updates come from an unlisted
 # Cloud Storage bucket, so the address is supplied only in the build

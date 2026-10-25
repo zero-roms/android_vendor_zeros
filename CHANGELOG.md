@@ -16,6 +16,14 @@ Redmi Note 8 (ginkgo). Versions before 1.0 are test builds.
   phones that do not report storage wear.
 - Updater: ZeroS header, and links to this changelog and to the issue
   tracker.
+- Bug reports: the Bug report tile, and Bug report in the power menu, open a
+  ZeroS screen. Describe the problem there, then send the report to ZeroS,
+  save it to Downloads or share it.
+- Save to Downloads in the share menu copies any shared file into Downloads.
+- ZeroS statistics replaces LineageOS statistics and reports to ZeroS. It
+  stays off unless you switch it on.
+- Settings > About phone > Legal information > ZeroS legal opens ZeroS's terms
+  and privacy policy (LEGAL.md).
 
 ## 0.5.0 (24 October 2026)
 
