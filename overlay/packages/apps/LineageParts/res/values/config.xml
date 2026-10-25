@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     ZeroS statistics go to the ZeroS reports server (vendor/zeros/server/reports), which
+     accepts LineageOS's statistics format unchanged. The same server address is in
+     apps/ZeroSTools/res/values/config.xml.
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="stats_lineage_url" translatable="false">https://zeros-reports-134228271504.us-central1.run.app/v1/stats</string>
+</resources>

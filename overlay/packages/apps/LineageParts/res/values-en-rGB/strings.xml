@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     ZeroS statistics: LineageParts' anonymous statistics, sent to ZeroS instead of LineageOS
+     (see config.xml). Off unless the user switches it on. The same text is in values-en-rGB,
+     which English (India) and other English locales use. LEGAL.md, Privacy, describes it too;
+     keep them in step.
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="anonymous_statistics_title">ZeroS statistics</string>
+    <string name="anonymous_statistics_summary">Count how many phones run each ZeroS build</string>
+    <string name="anonymous_statistics_warning">When this is on, the phone sends ZeroS one short report a day. It holds an ID made from the phone\'s Android ID with a one-way hash, the phone model, the build version, a country code and the mobile network\'s name. It does not include your name, phone number, accounts, location or files. ZeroS uses the reports only to count how many phones run each build, and deletes each one after 13 months.\n\nTap Preview data to see exactly what is sent.</string>
+    <string name="stats_collection_title">Send statistics</string>
+    <string name="stats_collection_summary">Once a day, send ZeroS the data shown in Preview data</string>
+</resources>
