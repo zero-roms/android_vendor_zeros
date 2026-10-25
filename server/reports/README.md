@@ -8,7 +8,7 @@ and how long it keeps it; keep the two in step.
 |---|---|---|
 | `POST /v1/stats` | LineageParts, once a day while ZeroS statistics is on | `stats/<date>/<device hash>.json`, one per phone per day |
 | `POST /v1/bugreports` | ZeroS tools, when the user taps Send to ZeroS | `bugreports/<date>/<ID>.zip` and `<ID>.json` (description, version, size, SHA-256) |
-| `GET /healthz` | checks | nothing |
+| `GET /v1/health` | checks (not `/healthz`, which Cloud Run reserves) | nothing |
 
 Limits (main.py, `Limits`): bug reports up to 30 MiB, 3 an hour per address and
 20 a day in total; statistics up to 4 KiB, 30 an hour per address and 5,000 a

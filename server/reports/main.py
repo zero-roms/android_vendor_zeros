@@ -12,7 +12,8 @@ Storage bucket (LEGAL.md, Privacy, describes both to users):
                         is switched on (off by default).
   POST /v1/bugreports   A bug report zip that the user chose to send from
                         ZeroS tools, with an optional description.
-  GET  /healthz         Liveness check.
+  GET  /v1/health       Liveness check. (Not /healthz: Cloud Run's front end
+                        reserves some paths ending in z and answers them itself.)
 
 Standard library only. On Cloud Run it writes to the bucket named in
 ZEROS_REPORTS_BUCKET with the service's own identity, which may create objects
@@ -260,7 +261,7 @@ class Handler(BaseHTTPRequestHandler):
     # Routes
 
     def do_GET(self):
-        if self.path == "/healthz":
+        if self.path == "/v1/health":
             body = b"ok\n"
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")

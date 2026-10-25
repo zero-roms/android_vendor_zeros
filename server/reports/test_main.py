@@ -99,8 +99,8 @@ class ServerTest(unittest.TestCase):
 
     # Basics
 
-    def test_healthz(self):
-        self.assertEqual(self.request("GET", "/healthz"), (200, b"ok\n"))
+    def test_health(self):
+        self.assertEqual(self.request("GET", "/v1/health"), (200, b"ok\n"))
 
     def test_unknown_path(self):
         self.assertEqual(self.request("GET", "/")[0], 404)
