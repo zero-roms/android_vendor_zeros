@@ -5,7 +5,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.zeroroms.tools">
 
+    <!-- BugreportManager.startBugreport (with the bug report allowlist) -->
     <uses-permission android:name="android.permission.DUMP" />
+    <!-- Opening the bug report screen when the power menu's Bug report is pressed -->
+    <uses-permission android:name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+    <!-- Sending a bug report to the ZeroS reports server, only when the user taps Send -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Collecting a bug report keeps going when the user leaves the screen -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <!-- "Bug report ready" notification; asked for when the first report is collected -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="false"
@@ -22,6 +32,56 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
+        <activity
+            android:name=".BugReportActivity"
+            android:exported="false"
+            android:label="@string/bug_report_title"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.DeviceDefault.DayNight"
+            android:windowSoftInputMode="adjustResize" />
+
+        <service
+            android:name=".BugReportService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Collects a bug report that the user asked for" />
+        </service>
+
+        <!-- Android's bug report handler; only the system (DUMP) can send these -->
+        <receiver
+            android:name=".BugReportHandlerReceiver"
+            android:exported="true"
+            android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="com.android.internal.intent.action.BUGREPORT_REQUESTED" />
+                <action android:name="com.android.internal.intent.action.GET_BUGREPORT_HANDLER_RESPONSE" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name=".ReportFileProvider"
+            android:authorities="org.zeroroms.tools.reports"
+            android:exported="false"
+            android:grantUriPermissions="true" />
+
+        <!-- "Save to Downloads" in the share sheet, for bug reports and any other file -->
+        <activity
+            android:name=".SaveToDownloadsActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:icon="@drawable/ic_download"
+            android:label="@string/save_to_downloads"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SEND_MULTIPLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="*/*" />
+            </intent-filter>
+        </activity>
 
         <!-- Google setup's Assistant opt-in without the Google app (bug B10) -->
         <activity

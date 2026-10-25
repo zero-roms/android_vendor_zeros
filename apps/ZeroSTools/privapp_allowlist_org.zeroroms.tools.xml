@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
+     Privileged permissions of ZeroS tools. Android refuses to boot if a privileged app asks
+     for a privileged permission that is not listed here, so keep this in step with
+     AndroidManifest.xml.
+
      SPDX-License-Identifier: Apache-2.0
 -->
 <permissions>
     <privapp-permissions package="org.zeroroms.tools">
-        <!-- BugreportManager.requestBugreport: start Android's interactive bug report -->
+        <!-- BugreportManager.startBugreport: collect a bug report -->
         <permission name="android.permission.DUMP" />
+        <!-- Open the bug report screen when the power menu's Bug report is pressed -->
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
     </privapp-permissions>
 </permissions>

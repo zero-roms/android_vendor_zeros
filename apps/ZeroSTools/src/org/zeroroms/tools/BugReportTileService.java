@@ -4,21 +4,17 @@
 
 package org.zeroroms.tools;
 
-import android.os.BugreportManager;
-import android.os.BugreportParams;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
-import android.util.Log;
-import android.widget.Toast;
 
 /**
- * Quick settings tile that starts Android's interactive bug report. Android's Shell app does the
- * rest: it shows progress in a notification and offers to share the report when it is ready. The
- * tile asks for the phone to be unlocked first, since a bug report holds personal data.
+ * Quick settings tile that opens the ZeroS bug report screen, which collects a report and lets
+ * the user send it to ZeroS, save it or share it. The tile asks for the phone to be unlocked
+ * first, since a bug report holds personal data.
  */
 public class BugReportTileService extends TileService {
-
-    private static final String TAG = "ZeroSBugReportTile";
 
     @Override
     public void onStartListening() {
@@ -33,26 +29,17 @@ public class BugReportTileService extends TileService {
     @Override
     public void onClick() {
         if (isLocked()) {
-            unlockAndRun(this::requestBugReport);
+            unlockAndRun(this::openBugReport);
         } else {
-            requestBugReport();
+            openBugReport();
         }
     }
 
-    private void requestBugReport() {
-        BugreportManager manager = getSystemService(BugreportManager.class);
-        if (manager == null) {
-            Log.e(TAG, "BugreportManager is not available");
-            return;
-        }
-        try {
-            manager.requestBugreport(
-                    new BugreportParams(BugreportParams.BUGREPORT_MODE_INTERACTIVE), null, null);
-        } catch (RuntimeException e) {
-            // A SecurityException means DUMP was not granted (privapp allowlist missing)
-            Log.e(TAG, "Bug report request failed", e);
-            return;
-        }
-        Toast.makeText(this, R.string.bug_report_started, Toast.LENGTH_LONG).show();
+    private void openBugReport() {
+        Intent intent = new Intent(this, BugReportActivity.class)
+                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                .putExtra(BugReportActivity.EXTRA_START, true);
+        startActivityAndCollapse(PendingIntent.getActivity(this, 1, intent,
+                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT));
     }
 }

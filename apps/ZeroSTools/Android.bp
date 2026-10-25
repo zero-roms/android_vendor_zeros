@@ -1,6 +1,7 @@
 //
-// ZeroS tools: small system app for ZeroS's own quick settings tiles and
-// switches. First tile: Bug report (Phase 3B).
+// ZeroS tools: small system app for ZeroS's own tiles and screens: the Bug report tile and
+// screen (send to ZeroS, save, share), Android's bug report handler, "Save to Downloads" in
+// the share sheet, and the Assistant step stub for Google setup (bug B10).
 //
 // SPDX-License-Identifier: Apache-2.0
 //
@@ -11,8 +12,17 @@ android_app {
     resource_dirs: ["res"],
     manifest: "AndroidManifest.xml",
     sdk_version: "system_current",
-    // Privileged for android.permission.DUMP, which the bug report request needs
+    // Privileged for DUMP and START_ACTIVITIES_FROM_BACKGROUND
     privileged: true,
     privapp_allowlist: "privapp_allowlist_org.zeroroms.tools.xml",
+    system_ext_specific: true,
+    required: ["sysconfig_org.zeroroms.tools.xml"],
+}
+
+// Bug report allowlist, installed to system_ext/etc/sysconfig
+prebuilt_etc {
+    name: "sysconfig_org.zeroroms.tools.xml",
+    src: "sysconfig_org.zeroroms.tools.xml",
+    sub_dir: "sysconfig",
     system_ext_specific: true,
 }

@@ -49,7 +49,11 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/zeros/overlay
 PRODUCT_PACKAGES += \
     ZeroSRemovedPackages
 
-# ZeroS's own system app: quick settings tiles (Bug report, Phase 3B)
+# ZeroS's own system app: the Bug report tile and screen (send to ZeroS, save,
+# share), Android's bug report handler and "Save to Downloads" in the share
+# sheet. Bug reports and ZeroS statistics go to server/reports. The handler
+# switch is in overlay/frameworks/base/core/res; statistics are LineageParts'
+# with ZeroS's text and server (overlay/packages/apps/LineageParts).
 PRODUCT_PACKAGES += \
     ZeroSTools
 

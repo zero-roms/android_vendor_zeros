@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Addresses used by ZeroS tools. The reports server is vendor/zeros/server/reports on Cloud
+     Run (its address is fixed by the service name, project number and region); the same address
+     is in overlay/packages/apps/LineageParts for ZeroS statistics.
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="reports_server_url" translatable="false">https://zeros-reports-134228271504.us-central1.run.app</string>
+    <string name="privacy_policy_url" translatable="false">https://github.com/zero-roms/android_vendor_zeros/blob/zeros-24.0/LEGAL.md#privacy</string>
+</resources>

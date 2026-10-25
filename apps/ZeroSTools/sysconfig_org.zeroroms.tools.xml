@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Lets ZeroS tools collect bug reports through BugreportManager (with DUMP) and be Android's
+     bug report handler. The tag keeps Android's older name in Android 17 (SystemConfig reads
+     "bugreport-whitelisted").
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<config>
+    <bugreport-whitelisted package="org.zeroroms.tools" />
+</config>

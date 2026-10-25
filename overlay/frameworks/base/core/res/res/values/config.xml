@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     ZeroS settings for Android's framework.
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <!-- Bug report handler: Bug report in the power menu opens ZeroS tools' bug report screen
+         (send to ZeroS, save, share) instead of Android's Shell notification. The app must be
+         on the bug report allowlist (apps/ZeroSTools/sysconfig_org.zeroroms.tools.xml).
+         Developer options > Bug report handler can switch back to Android's own. -->
+    <bool name="config_bugReportHandlerEnabled">true</bool>
+    <string name="config_defaultBugReportHandlerApp" translatable="false">org.zeroroms.tools</string>
+</resources>

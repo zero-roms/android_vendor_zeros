@@ -2,10 +2,47 @@
 <!--
      SPDX-License-Identifier: Apache-2.0
 -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">ZeroS tools</string>
-    <!-- Quick settings tile that captures a bug report [CHAR LIMIT=20] -->
+
+    <!-- Quick settings tile that opens the bug report screen [CHAR LIMIT=20] -->
     <string name="bug_report_tile_label">Bug report</string>
-    <!-- Shown after tapping the tile; Android's Shell app then shows progress and a share notification -->
-    <string name="bug_report_started">Capturing a bug report. A notification will let you share it in a minute or two.</string>
+
+    <!-- Bug report screen -->
+    <string name="bug_report_title">Bug report</string>
+    <string name="bug_report_status_collecting">Collecting the bug report. This takes a minute or two. You can describe the problem below while you wait.</string>
+    <string name="bug_report_status_ready">The bug report is ready.</string>
+    <string name="bug_report_status_sending">Sending…</string>
+    <string name="bug_report_status_sent">Sent to ZeroS, and deleted from this phone.</string>
+    <string name="bug_report_sent">Report ID: <xliff:g id="report_id" example="K7Q2-M9XD">%1$s</xliff:g>\nQuote this ID if you open an issue on GitHub or ask for the report to be deleted.</string>
+    <string name="bug_report_status_none">No bug report is waiting. To collect one, tap Bug report in quick settings.</string>
+    <string name="bug_report_status_failed">The bug report could not be collected. Try again in a minute.</string>
+    <string name="bug_report_status_denied">You didn\'t allow ZeroS tools to use the bug report, so it was deleted.</string>
+    <string name="bug_report_status_busy">Another bug report is still being collected. Try again in a few minutes.</string>
+    <string name="bug_report_description_label">What went wrong?</string>
+    <string name="bug_report_description_hint">What were you doing, and what happened?</string>
+    <string name="bug_report_contents">A bug report contains this phone\'s system logs and settings, the list of installed apps and other details about the phone. It can include personal information, such as account names and Wi-Fi network names. ZeroS keeps the reports it receives for 30 days, and only the ZeroS developer can read them.</string>
+    <string name="bug_report_privacy_link">Privacy policy</string>
+    <string name="bug_report_send">Send to ZeroS</string>
+    <string name="bug_report_share">Share</string>
+    <string name="bug_report_delete">Delete</string>
+    <string name="bug_report_done">Done</string>
+    <string name="bug_report_send_failed">The report wasn\'t sent. Check the connection and try again.</string>
+    <string name="bug_report_send_busy">ZeroS is getting too many reports right now. Try again later, or save the report and share it another way.</string>
+    <string name="bug_report_too_large">This report is too large to send. Save it to Downloads and share it another way.</string>
+
+    <!-- Notifications -->
+    <string name="bug_report_channel_progress">Bug report progress</string>
+    <string name="bug_report_channel_ready">Bug report ready</string>
+    <string name="bug_report_collecting_notification">Collecting bug report</string>
+    <string name="bug_report_ready_notification">Bug report ready</string>
+    <string name="bug_report_ready_notification_text">Tap to describe the problem and send it</string>
+
+    <!-- Share sheet target that copies shared files into Downloads [CHAR LIMIT=24] -->
+    <string name="save_to_downloads">Save to Downloads</string>
+    <string name="save_to_downloads_failed">Couldn\'t save to Downloads</string>
+    <plurals name="saved_to_downloads">
+        <item quantity="one">Saved to Downloads</item>
+        <item quantity="other">Saved <xliff:g id="count" example="3">%d</xliff:g> files to Downloads</item>
+    </plurals>
 </resources>
