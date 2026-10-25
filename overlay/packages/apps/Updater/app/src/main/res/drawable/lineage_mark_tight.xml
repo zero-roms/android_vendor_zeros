@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     ZeroS mark (ring with a red dot) in place of LineageOS's mark in the
+     Updater's header card; same 300x120 frame, white on the black card.
+
+     SPDX-License-Identifier: Apache-2.0
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="120dp"
+    android:viewportWidth="300"
+    android:viewportHeight="120">
+    <path
+        android:pathData="M150,14a46,46 0,1 1,0 92a46,46 0,1 1,0 -92z"
+        android:strokeWidth="9"
+        android:strokeColor="#FFFFFFFF" />
+    <path
+        android:fillColor="#FFE5322D"
+        android:pathData="M182.5,27.5m-11,0a11,11 0,1 1,22 0a11,11 0,1 1,-22 0" />
+</vector>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     ZeroS branding for LineageOS's Updater. The header keeps "LineageOS 24.0"
-     (header_build_version shows ro.lineage.build.version, the base); updates
-     in the list show the ZeroS version that publish-ota.sh puts in "version".
+     ZeroS branding for LineageOS's Updater. The header says "ZeroS" (its
+     format argument is ro.lineage.build.version, LineageOS's base version, so
+     it is left out); updates in the list show the ZeroS version that
+     publish-ota.sh puts in "version".
 
      SPDX-License-Identifier: Apache-2.0
 -->
@@ -10,8 +11,10 @@
     <string name="brand_name" translatable="false">ZeroS</string>
     <string name="export_path" translatable="false">ZeroS updates/</string>
     <string name="header_download_url" translatable="false">github.com/zero-roms</string>
-    <string name="menu_changelog_url" translatable="false">https://github.com/zero-roms</string>
-    <string name="report_issue_url" translatable="false">https://github.com/zero-roms</string>
+    <string name="header_build_version" translatable="false">ZeroS</string>
+    <string name="menu_changelog_url" translatable="false">https://github.com/zero-roms/android_vendor_zeros/blob/zeros-24.0/CHANGELOG.md</string>
+    <string name="report_issue_url" translatable="false">https://github.com/zero-roms/android_vendor_zeros/issues</string>
+    <string name="blocked_update_info_url" translatable="false">https://github.com/zero-roms/android_vendor_zeros#readme</string>
     <string name="list_build_version">ZeroS <xliff:g id="version" example="0.5.0">%1$s</xliff:g></string>
     <string name="list_build_version_date">ZeroS <xliff:g id="version" example="0.5.0">%1$s</xliff:g> - <xliff:g id="date" example="July 11, 2017">%2$s</xliff:g></string>
 </resources>
