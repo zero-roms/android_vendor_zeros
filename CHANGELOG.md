@@ -3,7 +3,18 @@
 ZeroS is a light Android 17 build based on LineageOS 24.0, for the Xiaomi
 Redmi Note 8 (ginkgo). Versions before 1.0 are test builds.
 
-## 0.5.1 (in progress)
+## 0.5.2 (in progress)
+
+- Boot animation: the "oS" of ZeroS is red, as planned for 0.5.1 (0.5.1
+  shipped the old animation by mistake).
+- Updater shows the ZeroS version instead of LineageOS's 24.0.
+- ZeroS statistics shows ZeroS's name and text in every language, and its
+  reports go to ZeroS.
+- Bug report screen: Send, Save, Share and Delete appear once the report is
+  ready.
+- Recovery shows the ZeroS mark while it installs an update.
+
+## 0.5.1 (25 October 2026)
 
 - Google setup no longer stops on a blank screen at the Assistant step.
 - Setup shows ZeroS's logo and colours, and its recovery page says ZeroS

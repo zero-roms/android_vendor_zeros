@@ -167,10 +167,12 @@ public class BugReportActivity extends Activity implements BugReports.Listener {
         mDescription.setVisibility(actions);
         findViewById(R.id.description_label).setVisibility(actions);
         findViewById(R.id.contents).setVisibility(actions);
-        mSend.setVisibility(actions);
-        mSave.setVisibility(actions);
-        mShare.setVisibility(actions);
-        mDelete.setVisibility(ready && !sent ? View.VISIBLE : View.GONE);
+        // The buttons appear only once there is a report to act on (bug B19)
+        int buttons = ready && !sent ? View.VISIBLE : View.GONE;
+        mSend.setVisibility(buttons);
+        mSave.setVisibility(buttons);
+        mShare.setVisibility(buttons);
+        mDelete.setVisibility(buttons);
         mDone.setVisibility(sent ? View.VISIBLE : View.GONE);
         mResult.setVisibility(sent ? View.VISIBLE : View.GONE);
         if (sent) {

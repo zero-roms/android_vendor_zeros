@@ -45,7 +45,9 @@ endif
 # generating its own (vendor/lineage/bootanimation, prebuilt_file hook); the
 # dark-theme variant is a link to the same file. Rebuild with
 # bootanimation/make-bootanimation.sh.
-TARGET_BOOTANIMATION := vendor/zeros/bootanimation/bootanimation.zip
+# The file name carries its checksum (make-bootanimation.sh): LineageOS's
+# genrule only rebuilds when this path changes (bug B17).
+TARGET_BOOTANIMATION := vendor/zeros/bootanimation/bootanimation-8f5a0dce.zip
 
 # Resource overlays shared by every ZeroS device
 PRODUCT_PACKAGE_OVERLAYS += vendor/zeros/overlay
@@ -57,8 +59,8 @@ PRODUCT_PACKAGES += \
 # ZeroS's own system app: the Bug report tile and screen (send to ZeroS, save,
 # share), Android's bug report handler and "Save to Downloads" in the share
 # sheet. Bug reports and ZeroS statistics go to server/reports. The handler
-# switch is in overlay/frameworks/base/core/res; statistics are LineageParts'
-# with ZeroS's text and server (overlay/packages/apps/LineageParts).
+# switch is in overlay/frameworks/base/core/res; statistics come from ZeroS's
+# copy of LineageParts, with ZeroS's text and server (from 0.5.2).
 PRODUCT_PACKAGES += \
     ZeroSTools
 

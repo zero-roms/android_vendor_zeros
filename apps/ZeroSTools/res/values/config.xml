@@ -2,7 +2,7 @@
 <!--
      Addresses used by ZeroS tools. The reports server is vendor/zeros/server/reports on Cloud
      Run (its address is fixed by the service name, project number and region); the same address
-     is in overlay/packages/apps/LineageParts for ZeroS statistics.
+     is in ZeroS's LineageParts (packages/apps/LineageParts res/values/config.xml) for ZeroS statistics.
 
      SPDX-License-Identifier: Apache-2.0
 -->

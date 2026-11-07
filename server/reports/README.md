@@ -31,7 +31,7 @@ bucket name is kept out of git, in ~/rom-keys/zeros-reports.env
 - Service `zeros-reports`, address
   `https://zeros-reports-<project number>.us-central1.run.app` (in
   apps/ZeroSTools/res/values/config.xml and
-  overlay/packages/apps/LineageParts/res/values/config.xml).
+  res/values/config.xml in ZeroS's LineageParts, zero-roms/android_packages_apps_LineageParts).
 - Runs as `zeros-reports-run@`, which holds only Storage Object Creator on the
   bucket: it can add objects but not read, list or delete them.
 - Built by Cloud Build as `zeros-reports-build@` (Cloud Run Builder on the
