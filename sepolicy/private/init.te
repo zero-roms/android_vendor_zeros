@@ -1,0 +1,4 @@
+# ZeroS ad and tracker blocking: init bind-mounts the blocklist over
+# /system/etc/hosts and removes it when the user switches blocking off
+# (vendor/zeros/adblock/zeros-adblock.rc).
+allow init system_file:file mounton;

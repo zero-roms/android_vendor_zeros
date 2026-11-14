@@ -3,7 +3,14 @@
 ZeroS is a light Android 17 build based on LineageOS 24.0, for the Xiaomi
 Redmi Note 8 (ginkgo). Versions before 1.0 are test builds.
 
-## 0.5.2 (in progress)
+## 0.6.0 (in progress)
+
+- Ad and tracker blocking: ZeroS blocks about 77,000 ad, tracker and malware
+  domains in every app that uses the system's DNS, from StevenBlack's hosts
+  list. It is on from the start. The Ad blocking tile in quick settings turns
+  it off at once; turning it back on takes a restart.
+
+## 0.5.2 (7 November 2026)
 
 - Boot animation: the "oS" of ZeroS is red, as planned for 0.5.1 (0.5.1
   shipped the old animation by mistake).

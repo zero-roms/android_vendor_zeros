@@ -64,6 +64,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ZeroSTools
 
+# Ad and tracker blocking (0.6.0): the blocklist, its licence and the boot
+# rule that lays it over /system/etc/hosts (adblock/zeros-adblock.rc, which
+# needs the one SELinux rule in sepolicy/private). The on/off switch is the Ad
+# blocking tile in ZeroS's LineageParts (persist.sys.zeros.adblock).
+PRODUCT_COPY_FILES += \
+    vendor/zeros/adblock/hosts:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/zeros/hosts \
+    vendor/zeros/adblock/LICENSE-StevenBlack-hosts:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/zeros/hosts.LICENSE \
+    vendor/zeros/adblock/zeros-adblock.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/zeros-adblock.rc
+PRODUCT_PRIVATE_SEPOLICY_DIRS += vendor/zeros/sepolicy/private
+
 # Third-party apps, built from source (prebuilt/apps/build-fossify.sh,
 # prebuilt/apps/build-notallyx.sh)
 PRODUCT_PACKAGES += \

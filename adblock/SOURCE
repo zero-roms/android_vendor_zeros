@@ -1,0 +1,14 @@
+ZeroS ad and tracker blocking list (0.6.0)
+
+file:     hosts (installed to /system_ext/etc/zeros/hosts and laid over
+          /system/etc/hosts at boot by zeros-adblock.rc)
+source:   https://github.com/StevenBlack/hosts, file "hosts" (standard
+          unified list: ads, trackers, malware)
+commit:   35c74714ad86b36806b3f40f3c36abf8b2063cb5 (list dated 14 November 2026)
+size:     2,361,640 bytes, 77,310 blocked domains
+sha256:   f92d65e8f604c0eff1684ed4ee47b05416eeedf6b24dcacaff0743f7f231e956
+licence:  MIT, LICENSE-StevenBlack-hosts (shipped next to the list)
+fetched:  14 November 2026, approved by the user
+
+Update deliberately with update-hosts.sh <commit>, then record the new
+commit, size, count and sha256 here.

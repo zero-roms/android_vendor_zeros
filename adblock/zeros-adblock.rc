@@ -1,0 +1,17 @@
+# ZeroS ad and tracker blocking (0.6.0)
+#
+# The blocklist (vendor/zeros/adblock/SOURCE) is laid over Android's hosts
+# file before any app starts, so lookups of a listed domain fail in every app
+# that uses the system's resolver. The Ad blocking tile (ZeroS's LineageParts)
+# sets persist.sys.zeros.adblock: "false" removes the blocklist straight away;
+# switching it back on applies at the next start. Persistent properties load
+# after post-fs-data, so the blocklist goes on unconditionally here and comes
+# off when the property says so.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+on post-fs-data
+    mount none /system_ext/etc/zeros/hosts /system/etc/hosts bind
+
+on property:persist.sys.zeros.adblock=false
+    umount /system/etc/hosts

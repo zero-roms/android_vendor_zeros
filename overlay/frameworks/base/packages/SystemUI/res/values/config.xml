@@ -8,10 +8,10 @@
 -->
 <resources>
     <string name="quick_settings_tiles_default" translatable="false">
-        internet,bt,dnd,cast,flashlight,airplane,rotation,wallet,alarm,controls,screenrecord,battery,custom(org.zeroroms.tools/.BugReportTileService)
+        internet,bt,dnd,cast,flashlight,airplane,rotation,wallet,alarm,controls,screenrecord,battery,custom(org.zeroroms.tools/.BugReportTileService),custom(org.lineageos.lineageparts/.zeros.AdBlockTileService)
     </string>
 
     <string name="quick_settings_tiles_default_split" translatable="false">
-        wifi,bt,cell,cast,dnd,wallet,airplane,rotation,flashlight,battery,alarm,controls,screenrecord,custom(org.zeroroms.tools/.BugReportTileService)
+        wifi,bt,cell,cast,dnd,wallet,airplane,rotation,flashlight,battery,alarm,controls,screenrecord,custom(org.zeroroms.tools/.BugReportTileService),custom(org.lineageos.lineageparts/.zeros.AdBlockTileService)
     </string>
 </resources>
