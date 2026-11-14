@@ -3,7 +3,21 @@
 ZeroS is a light Android 17 build based on LineageOS 24.0, for the Xiaomi
 Redmi Note 8 (ginkgo). Versions before 1.0 are test builds.
 
-## 0.6.0 (in progress)
+## 0.6.1 (in progress)
+
+- Nope Remote, an infrared remote app, now comes with ZeroS. Its built-in
+  library has 6,207 remotes, half of them for TVs, and works without a
+  download. ZeroS made the library from Flipper Devices IRDB, IREXT and the
+  public domain files of Flipper-IRDB, and removed the duplicates. Nope Remote
+  no longer offers IREXT and Flipper Devices IRDB as downloads, since the
+  library covers them. You can still download Flipper-IRDB. The library has no
+  air conditioner remotes. Nope Remote's Settings lists the sources and
+  licences.
+- When the phone cannot send a button's code, Nope Remote now says so instead
+  of closing. It also skips Mi Remote codes that the phone cannot send.
+- ZeroS legal now names Nope Remote and the licences of its library.
+
+## 0.6.0 (14 November 2026)
 
 - Ad and tracker blocking: ZeroS blocks about 77,000 ad, tracker and malware
   domains in every app that uses the system's DNS, from StevenBlack's hosts

@@ -1,0 +1,7 @@
+app:     NopeRemote
+source:  https://github.com/zero-roms/nope-remote (branch zeros)
+commit:  4d7d0d722e5008c152a758312b60af167b9e0304
+based on: https://github.com/monuk7735/nope-remote at 67549e32ee48862ff60d7b42f174f0f43f6532de (v2.6 plus fixes, 1 November 2026)
+build:   release, unsigned (signed by the ROM build)
+sha256:  02d93be659a1e284adca8c59af899075f9e4f3071aba684f40a19a0d286f5a5f
+built:   2026-11-14T19:56Z with openjdk version "17.0.21" 2026-10-20

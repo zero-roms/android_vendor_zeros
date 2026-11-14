@@ -1,0 +1,35 @@
+Remotes per type and source, before -> after removing duplicates
+
+type                  Flipper Devices IRDB            Flipper-IRDB                   IREXT           total
+Air purifier               11 -> 11                 2 -> 2                 17 -> 16             30 -> 29
+Audio                     431 -> 363               26 -> 26               291 -> 261           748 -> 650
+CCTV                        0 -> 0                  1 -> 1                  0 -> 0               1 -> 1
+Camera                     24 -> 20                 1 -> 1                  0 -> 0              25 -> 21
+Car Multimedia              0 -> 0                  1 -> 1                  0 -> 0               1 -> 1
+DVD and Blu-ray           769 -> 621                4 -> 4                512 -> 426          1285 -> 1051
+Digital Signs               0 -> 0                  1 -> 1                  0 -> 0               1 -> 1
+Fan                       499 -> 260                8 -> 7                235 -> 209           742 -> 476
+Fireplaces                  0 -> 0                  3 -> 3                  0 -> 0               3 -> 3
+Head Units                  0 -> 0                  1 -> 1                  0 -> 0               1 -> 1
+Heaters                     0 -> 0                  1 -> 1                  0 -> 0               1 -> 1
+Humidifiers                 0 -> 0                  1 -> 1                  0 -> 0               1 -> 1
+Light                       0 -> 0                  7 -> 7                 12 -> 11             19 -> 18
+Miscellaneous               0 -> 0                  6 -> 6                  0 -> 0               6 -> 6
+Multimedia                  0 -> 0                  1 -> 1                  0 -> 0               1 -> 1
+Projector                 433 -> 306               13 -> 12               203 -> 191           649 -> 509
+Set-top box               215 -> 134                6 -> 6                144 -> 120           365 -> 260
+TV                       3051 -> 1422              20 -> 17              2106 -> 1714         5177 -> 3153
+Touchscreen Displays          0 -> 0                  2 -> 2                  0 -> 0               2 -> 2
+Toys                        0 -> 0                  6 -> 6                  0 -> 0               6 -> 6
+VCR                         0 -> 0                  1 -> 1                  0 -> 0               1 -> 1
+Vacuum cleaner              0 -> 0                  3 -> 3                 13 -> 12             16 -> 15
+All                      5433 -> 3137             115 -> 110             3533 -> 2960         9081 -> 6207
+
+Left out
+  buttons: no code (empty in the library): 2693
+  buttons: repeated name in a remote: 4015
+  buttons: timings Android cannot send: 842
+  remotes: no usable buttons: 3
+
+6207 remotes, 155550 buttons, 57.0 MB of .ir text, zip 4.6 MB
+sha256 6df2626e3a74c0ea01ae92b00a793a0932d12ca3adc3bc740bdc6fdac51997d1  noperemote-library.zip

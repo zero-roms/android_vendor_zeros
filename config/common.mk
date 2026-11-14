@@ -75,11 +75,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRIVATE_SEPOLICY_DIRS += vendor/zeros/sepolicy/private
 
 # Third-party apps, built from source (prebuilt/apps/build-fossify.sh,
-# prebuilt/apps/build-notallyx.sh)
+# prebuilt/apps/build-notallyx.sh, prebuilt/apps/build-noperemote.sh)
 PRODUCT_PACKAGES += \
     FossifyFileManager \
     FossifyGallery \
+    NopeRemote \
     NotallyX
+
+# Nope Remote's preloaded remote library and its sources and licences (0.6.1;
+# noperemote/library, read in place by ZeroS's Nope Remote)
+PRODUCT_COPY_FILES += \
+    vendor/zeros/noperemote/library/noperemote-library.zip:$(TARGET_COPY_OUT_PRODUCT)/etc/noperemote/noperemote-library.zip \
+    vendor/zeros/noperemote/library/NOTICE.txt:$(TARGET_COPY_OUT_PRODUCT)/etc/noperemote/NOTICE.txt
 
 # Third-party apps kept with their publishers' signatures; the APKs are not in
 # git and are put in place by prebuilt/apps/fetch-prebuilts.sh. Cromite

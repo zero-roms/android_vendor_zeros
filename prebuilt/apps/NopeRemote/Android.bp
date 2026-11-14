@@ -1,0 +1,25 @@
+//
+// Nope Remote (GPL-3.0), the IR remote: ZeroS's fork with the bug B9 fixes and
+// the preloaded ZeroS library (vendor/zeros/noperemote/library, installed to
+// /product/etc/noperemote by config/common.mk). Built from source by
+// prebuilt/apps/build-noperemote.sh and signed here with the ROM's default app
+// key (not the platform key).
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app_import {
+    name: "NopeRemote",
+    apk: "NopeRemote.apk",
+    default_dev_cert: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: true,
+    },
+    // Declared in the APK's manifest as not required (AndroidX window
+    // libraries); the build's uses-library check needs the same list here.
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+}

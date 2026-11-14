@@ -3,7 +3,7 @@
 ZeroS is an Android 17 build for the Xiaomi Redmi Note 8 (ginkgo), based on
 LineageOS 24.0 and the Android Open Source Project.
 
-Last updated 25 October 2026.
+Last updated 15 November 2026.
 
 ## Terms of use
 
@@ -31,8 +31,11 @@ code is on GitHub at https://github.com/zero-roms.
 The Google build includes Google Play services, the Play Store, Gboard and
 other Google apps. They are Google's software, not part of ZeroS, and Google's
 terms apply to them: https://policies.google.com/terms. The other apps that
-come with ZeroS (Cromite, Fossify Gallery, Fossify File Manager and NotallyX)
-keep their own licences.
+come with ZeroS (Cromite, Fossify Gallery, Fossify File Manager, NotallyX and
+Nope Remote) keep their own licences. ZeroS made Nope Remote's built-in remote
+library from Flipper Devices IRDB and IREXT, both under the MIT licence, and
+from the Flipper-IRDB files under CC0 1.0. Nope Remote's Settings shows their
+licence notices.
 
 Android is a trademark of Google LLC. LineageOS, Xiaomi and Redmi are
 trademarks of their owners. None of them made, endorsed or supports ZeroS.
