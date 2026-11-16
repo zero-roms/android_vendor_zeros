@@ -83,3 +83,17 @@ if [ ! -f "$HERE/GoogleMessages/GoogleMessages.apk" ]; then
     exit 1
 fi
 check GoogleMessages GoogleMessages.apk
+# Built-in apps get no native-library extraction from Android, so Messages'
+# 64-bit libraries are unpacked from the checked APK for /product/lib64
+# (GoogleMessages/Android.bp, build/tools/gen-messages-libs.py).
+lib="$HERE/GoogleMessages/lib/arm64"
+rm -rf "$HERE/GoogleMessages/lib" && mkdir -p "$lib"
+unzip -q -j "$HERE/GoogleMessages/GoogleMessages.apk" 'lib/arm64-v8a/*.so' -d "$lib"
+want=$(grep -c '^cc_prebuilt_library_shared' "$HERE/GoogleMessages/Android.bp")
+got=$(ls "$lib" | wc -l | tr -d ' ')
+if [ "$got" != "$want" ]; then
+    echo "error: GoogleMessages APK has $got arm64 libraries, Android.bp lists $want;" \
+         "run build/tools/gen-messages-libs.py" >&2
+    exit 1
+fi
+echo "ok: GoogleMessages/lib/arm64 ($got libraries)"

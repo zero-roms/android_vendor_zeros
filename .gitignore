@@ -4,6 +4,7 @@
 /prebuilt/apps/Cromite/Cromite.apk
 /prebuilt/apps/Gboard/Gboard.apk
 /prebuilt/apps/GoogleMessages/GoogleMessages.apk
+/prebuilt/apps/GoogleMessages/lib/
 
 # Python caches from running server/reports tests
 __pycache__/
