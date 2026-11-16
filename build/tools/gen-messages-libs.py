@@ -21,6 +21,10 @@ apk, vendor = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2])
 libs = sorted(pathlib.PurePosixPath(n).name for n in zipfile.ZipFile(apk).namelist()
               if n.startswith("lib/arm64-v8a/") and n.endswith(".so"))
 mods = ["GoogleMessages_" + l[:-3] for l in libs]
+# Libraries that LineageOS also installs to /product/lib64; ZeroS's copy
+# replaces it. libframesequence: only LineageOS's Messaging needs LineageOS's
+# copy, and Google Messages replaces that app.
+OVERRIDES = {"libframesequence.so": "libframesequence"}
 
 out = ["""//
 // Google Messages, the Google build's SMS app (decided 24 October 2026, after a
@@ -68,8 +72,10 @@ for l, m in zip(libs, mods):
             '    srcs: ["lib/arm64/%s"],' % l,
             '    compile_multilib: "64",',
             "    product_specific: true,",
-            "    check_elf_files: false,",
-            "    strip: {",
+            "    check_elf_files: false,"]
+    if l in OVERRIDES:
+        out += ['    overrides: ["%s"],' % OVERRIDES[l]]
+    out += ["    strip: {",
             "        none: true,",
             "    },",
             "}",

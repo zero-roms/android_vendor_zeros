@@ -186,6 +186,7 @@ cc_prebuilt_library_shared {
     compile_multilib: "64",
     product_specific: true,
     check_elf_files: false,
+    overrides: ["libframesequence"],
     strip: {
         none: true,
     },
