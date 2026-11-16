@@ -76,3 +76,10 @@ if [ ! -f "$HERE/Gboard/Gboard.apk" ]; then
     exit 1
 fi
 check Gboard Gboard.apk
+
+if [ ! -f "$HERE/GoogleMessages/GoogleMessages.apk" ]; then
+    echo "error: vendor/zeros/prebuilt/apps/GoogleMessages/GoogleMessages.apk is missing;" \
+         "copy it from the Mac (HANDBOOK.md)" >&2
+    exit 1
+fi
+check GoogleMessages GoogleMessages.apk

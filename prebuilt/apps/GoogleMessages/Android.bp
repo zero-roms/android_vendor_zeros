@@ -1,0 +1,29 @@
+//
+// Google Messages, the Google build's SMS app (decided 24 October 2026, after a
+// day's trial: RCS and reactions). Google's own signed APK, kept with its
+// signature so Play Store updates install over it, as with Gboard. The APK is
+// Google's to distribute, not ZeroS's, so it is not in git: it is copied to the
+// build server and checked against the SHA-256 and signing certificate pinned
+// in SOURCE (prebuilt/apps/fetch-prebuilts.sh). Only in the Google build
+// (config/gapps.mk), which also makes it the default SMS app.
+//
+// Not privileged: as a privileged app every privileged permission it asks for
+// would have to be in MindTheGapps' allowlist or the phone would not boot; the
+// trial ran it as an ordinary app and RCS worked. Its native libraries are
+// compressed in the APK, so it is not marked preprocessed (the build stores
+// them uncompressed, as MindTheGapps does for Google's apps).
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app_import {
+    name: "GoogleMessages",
+    apk: "GoogleMessages.apk",
+    presigned: true,
+    dex_preopt: {
+        enabled: false,
+    },
+    product_specific: true,
+    // Replaces LineageOS's Messaging, so the phone has exactly one SMS app.
+    overrides: ["messaging"],
+}

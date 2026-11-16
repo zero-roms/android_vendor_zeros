@@ -3,7 +3,18 @@
 ZeroS is a light Android 17 build based on LineageOS 24.0, for the Xiaomi
 Redmi Note 8 (ginkgo). Versions before 1.0 are test builds.
 
-## 0.6.1 (in progress)
+## 0.6.2 (in progress)
+
+- Google Messages replaces the old Messaging app in the Google build and is
+  the default SMS app. Your existing texts stay, and it supports RCS chat.
+- ZeroS no longer includes Digital Wellbeing or the NFC Tags app. This phone
+  has no NFC, and Wellbeing kept about 33 MB of memory busy in the background.
+  The Play Store cannot reinstall Wellbeing.
+- Updates can now refresh the recovery as well. Turn on Update recovery in the
+  Updater's settings.
+- The Updater says ZeroS instead of LineageOS in every language.
+
+## 0.6.1 (14 November 2026)
 
 - Nope Remote, an infrared remote app, now comes with ZeroS. Its built-in
   library has 6,207 remotes, half of them for TVs, and works without a

@@ -24,5 +24,6 @@ prebuilt_etc {
         "libqcomfm_jni",
         "qcom.fmradio",
         "qcom.fmradio.xml",
+        "Tag",     // NFC Tags app; ginkgo has no NFC (removed 15 November 2026)
     ],
 }

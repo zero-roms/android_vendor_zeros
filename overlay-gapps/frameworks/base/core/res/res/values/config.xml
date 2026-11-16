@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     ZeroS, Google build only (config/gapps.mk): Google Messages is the default
+     SMS app; LineageOS's Messaging is not installed.
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+    <string name="config_defaultSms" translatable="false">com.google.android.apps.messaging</string>
+</resources>

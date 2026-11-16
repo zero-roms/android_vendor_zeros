@@ -1,0 +1,8 @@
+app:     Google Messages (com.google.android.apps.messaging)
+source:  Google LLC; file taken from APKMirror (universal, nodpi, Android 8.0+ variant: the only single-APK variant of this release), 15 November 2026
+version: messages.android_20261106_00_RC04.phone_dynamic (versionCode 328486063), targetSdk 37, single APK
+size:    172612006
+sha256:  37f419c79ae91349e7ca1e8c90b17faf68ecae6e937d44f077b3c718dde9671c
+cert:    cc75526d6c0f80ac3b3a84eb44838440dbbe6b124443a7c7d7bd19182ac022c9
+lineage: v3.1 key rotation from Google's original Messages key cc75526d... (Android 12L and older) to 3284b53cbc699d6adf924945cc5a26dc5a0066b1d6767ffcd7bca44d0ea9fab8 (Android 13+); Play Store updates carry the same lineage
+checked: SHA-256 equals APKMirror's published hash; apksigner verify passes (v2, v3, v3.1); certificate equals the one APKMirror lists for every variant of this release

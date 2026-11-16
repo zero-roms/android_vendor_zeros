@@ -39,19 +39,25 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     SpeechServicesByGoogle
 
-# Digital Wellbeing: app timers, Focus mode, screen time. Cannot be added
-# later from the Play Store; can be disabled in Settings > Apps.
-PRODUCT_PACKAGES += \
-    Wellbeing \
-    wellbeing.xml
+# Removed in 0.6.2 (user's app review, 15 November 2026): Digital Wellbeing
+# (Wellbeing, wellbeing.xml; about 33 MB while running; cannot be added later
+# from the Play Store; Phase 4 plans ZeroS's own screen time page).
 
-# Lets the Play Store install Android Auto if wanted
+# Lets the Play Store install Android Auto if wanted (kept in the 15 November
+# review although it runs at about 33 MB: without it Android Auto may not be
+# installable at all)
 PRODUCT_PACKAGES += \
     AndroidAutoStub
 
 # Gboard, the Google build's keyboard (prebuilt/apps/Gboard)
 PRODUCT_PACKAGES += \
     Gboard
+
+# Google Messages, the Google build's SMS app (prebuilt/apps/GoogleMessages),
+# replacing LineageOS's Messaging; the overlay makes it the default SMS app
+PRODUCT_PACKAGES += \
+    GoogleMessages
+PRODUCT_PACKAGE_OVERLAYS += vendor/zeros/overlay-gapps
 
 # Permissions, system config and overlays the above rely on
 PRODUCT_PACKAGES += \
